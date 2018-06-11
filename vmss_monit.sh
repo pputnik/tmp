@@ -11,7 +11,8 @@ chmod 755 /tmp/pinger.sh
 
 # old cron tasks will be deleted! Modify if needed
 echo "* * * * * /tmp/pinger.sh" > /var/spool/cron/crontabs/azureuser
-chown azureuser.azureuser /tmp/pinger.sh /var/spool/cron/crontabs/azureuser /var/log/num.log
+chmod 600 /var/spool/cron/crontabs/azureuser 
+chown azureuser.azureuser /tmp/pinger.sh /var/log/num.log /var/spool/cron/crontabs/azureuser 
 
 echo whoami $(whoami)
 /etc/init.d/cron restart
