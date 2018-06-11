@@ -1,7 +1,9 @@
 #!/bin/bash -vx
 
-# for Ubuntu on azure!
+echo whoami $(whoami)
+pwd
 
+# for Ubuntu on azure!
 touch /var/log/num.log
 chmod 666 /var/log/num.log
 
@@ -14,7 +16,6 @@ echo "* * * * * /tmp/pinger.sh" > /var/spool/cron/crontabs/azureuser
 chmod 600 /var/spool/cron/crontabs/azureuser 
 chown azureuser.azureuser /tmp/pinger.sh /var/log/num.log /var/spool/cron/crontabs/azureuser 
 
-echo whoami $(whoami)
 /etc/init.d/cron restart
 sleep 20
 /etc/init.d/cron restart
