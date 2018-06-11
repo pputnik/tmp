@@ -15,3 +15,6 @@ chown azureuser.azureuser /tmp/pinger.sh /var/spool/cron/crontabs/azureuser /var
 
 echo whoami $(whoami)
 /etc/init.d/cron restart
+sleep 20
+/etc/init.d/cron restart
+
