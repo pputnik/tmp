@@ -29,7 +29,9 @@ chown omsagent:omiusers /tmp/pinger2.sh
 WsCustomerId=$(ls  /etc/opt/microsoft/omsagent/ |awk '{ print length, $0 }' | sort -n -s | cut -d" " -f2- | tail -n 1)
 
 wget https://raw.githubusercontent.com/pputnik/tmp/master/serverdetails.conf
-mv serverdetails.conf /etc/opt/microsoft/omsagent/$WsCustomerId/conf/omsagent.d/
-sed -i "s/WsCustomerId/$WsCustomerId/g" /etc/opt/microsoft/omsagent/$WsCustomerId/conf/omsagent.d/serverdetails.conf
+servdet_path=/etc/opt/microsoft/omsagent/$WsCustomerId/conf/omsagent.d
+mv serverdetails.conf $servdet_path/
+sed -i "s/WsCustomerId/$WsCustomerId/g" $servdet_path/serverdetails.conf
+chown omsagent:omiusers $servdet_path/serverdetails.conf
 
-/opt/microsoft/omsagent/bin/service_control restart $WsCustomerId
+/opt/microsoft/omsagent/bin/service_control restart
