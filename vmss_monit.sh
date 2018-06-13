@@ -30,4 +30,6 @@ WsCustomerId=$(ls  /etc/opt/microsoft/omsagent/ |awk '{ print length, $0 }' | so
 
 wget https://raw.githubusercontent.com/pputnik/tmp/master/serverdetails.conf
 mv serverdetails.conf /etc/opt/microsoft/omsagent/$WsCustomerId/conf/omsagent.d/
-sed -i 's/WsCustomerId/$WsCustomerId/g' /etc/opt/microsoft/omsagent/$WsCustomerId/conf/omsagent.d/serverdetails.conf
+sed -i "s/WsCustomerId/$WsCustomerId/g" /etc/opt/microsoft/omsagent/$WsCustomerId/conf/omsagent.d/serverdetails.conf
+
+/opt/microsoft/omsagent/bin/service_control restart $WsCustomerId
