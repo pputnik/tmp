@@ -35,3 +35,4 @@ sed -i "s/WsCustomerId/$WsCustomerId/g" $servdet_path/serverdetails.conf
 chown omsagent:omiusers $servdet_path/serverdetails.conf
 
 /opt/microsoft/omsagent/bin/service_control restart
+/etc/init.d/omsagent-$WsCustomerId restart
