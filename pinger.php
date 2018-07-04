@@ -18,7 +18,7 @@ if (is_dir("$dir/$subj") === false){
         if (mkdir("$dir/$subj", 0777, true) !== true) exit("cannot create $dir/$subj\n");       #create dire
 }
 
-if (file_put_contents("$dir/$subj/$host", "$host.value $status\n") <5 ) exit("cannot write to $dir/$subj/$host\n"); #overwrite old file
+if (file_put_contents("$dir/$subj/$host", "$host $status\n") <3 ) exit("cannot write to $dir/$subj/$host\n"); #overwrite old file
 echo "OK\n";
 
 //==================================================
