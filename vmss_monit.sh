@@ -22,8 +22,8 @@ chmod 600 /var/spool/cron/crontabs/azureuser
 chown azureuser.azureuser /tmp/pinger.sh /var/log/num.log /var/spool/cron/crontabs/azureuser 
 
 /etc/init.d/cron restart
-sleep 20
-/etc/init.d/cron restart
+#sleep 20
+#/etc/init.d/cron restart
 
 ############ part2
 # https://blogs.technet.microsoft.com/mohammedabutaleb/2017/10/07/collect-linux-data-using-custom-json-data-source/
