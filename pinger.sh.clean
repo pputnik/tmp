@@ -4,4 +4,4 @@
 #echo $num
 if [ $(/bin/netstat -plnt | /bin/grep ":25 " -c) -ne 2 ]; then num=0; else num=1; fi
 echo "`date '+%Y-%m-%d %H:%M:%S'` $num" >> /var/log/num.log
-curl -i http://logger/pinger.php?me=myId&subject=postfix&status=$num
+curl http://logger/pinger.php?me=localhost.localdomain&subject=postfix&status=$num
