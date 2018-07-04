@@ -30,5 +30,5 @@ cd /root
 chmod 700 /root/check_statuses.sh
 
 
-ct=$(echo "MAILTO=$i"; echo '* * * * * /root/check_statuses.sh');	# thus we'll have two lines in one variable, separated by "\n". Needed for crontab.
+ct=$(echo "MAILTO=$1"; echo '* * * * * /root/check_statuses.sh');	# thus we'll have two lines in one variable, separated by "\n". Needed for crontab.
 echo "$ct" | crontab -
