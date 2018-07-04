@@ -18,7 +18,7 @@ apt-get install lynx apache2 php7.0 php7.0-cgi php7.0-cli php7.0-common libapach
 
 /usr/bin/wget --no-cache https://raw.githubusercontent.com/pputnik/tmp/master/pinger.php 
 mv pinger.php /var/www/html/
-mkdir /var/cache/munin/vmssi -p
+mkdir /var/cache/munin/vmss -p
 #chown munin.munin /var/cache/munin/vmss
 chmod 777 /var/cache/munin/vmss
 
