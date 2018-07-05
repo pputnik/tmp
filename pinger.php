@@ -24,8 +24,8 @@ echo "OK\n";
 //==================================================
 function sanitize($in){
         $out = preg_replace ("/[^a-zA-Z0-9._-]/", '', $in);
-        $out = preg_replace("/^[\.-_]/", '', $out);   # those elements are nit allowed in the first place
-        $out = preg_replace("/[\.-_]$/", '', $out);   # those elements are nit allowed in the last place
+        $out = preg_replace("/^[\._-]/", '', $out);   # those elements are nit allowed in the first place
+        $out = preg_replace("/[\._-]$/", '', $out);   # those elements are nit allowed in the last place
         return $out;
 }
 
