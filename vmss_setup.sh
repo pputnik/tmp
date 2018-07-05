@@ -22,8 +22,9 @@ sed -i "s/logger/$1/" /tmp/pinger.sh
 sed -i "s/myId/`hostname`/" /tmp/pinger.sh
 
 # old cron tasks will be deleted! Modify if needed
-echo "* * * * * /tmp/pinger.sh >> /var/log/num.log 2>&1" > /var/spool/cron/crontabs/azureuser
-chmod 600 /var/spool/cron/crontabs/azureuser 
-chown azureuser.azureuser /tmp/pinger.sh /var/log/num.log /var/spool/cron/crontabs/azureuser 
+#echo "* * * * * /tmp/pinger.sh >> /var/log/num.log 2>&1" > /var/spool/cron/crontabs/azureuser
+echo "* * * * * /tmp/pinger.sh >> /var/log/num.log 2>&1"  | crontab -
+#chmod 600 /var/spool/cron/crontabs/azureuser 
+#chown azureuser.azureuser /tmp/pinger.sh /var/log/num.log /var/spool/cron/crontabs/azureuser 
 
 /etc/init.d/cron restart
